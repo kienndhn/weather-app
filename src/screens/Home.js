@@ -138,12 +138,10 @@ const Home = () => {
     const [humidity, setHumidity] = useState(0)
     const [temperature, setTemperature] = useState(0)
     const [human, setHuman] = useState(0)
+    
     //call api
     useEffect(() => {
-        fetch('/data/?fbclid=IwAR1msJ54ico_UEiIUZBRyv46jLBn7-nOQe6FBq-hnzju4mdIZM614s38Cb0',
-            {
-                method: 'GET'
-            })
+        fetch('/data/?fbclid=IwAR1msJ54ico_UEiIUZBRyv46jLBn7-nOQe6FBq-hnzju4mdIZM614s38Cb0',{method: 'GET'})
             .then(result => result.json())
             .then(data => {
                 // console.log(data);
@@ -174,10 +172,6 @@ const Home = () => {
             )
             .catch(error => console.log(error))
     }, [])
-
-    useEffect(() => {
-        // console.log(temperature)
-    })
 
 
     return (
